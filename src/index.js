@@ -6,7 +6,8 @@ const path = require("node:path");
 require("dotenv").config({ path: path.join("./config", ".env") });
 fastify.register(require("./db-connection"));
 fastify.register(require("./controller/task"));
-//fastify.register(require("./controller/user"));
+fastify.register(require("./controller/user"));
+fastify.register(require("./controller/auth"));
 
 //fastify.mongo.db.collection().deleteOne()
 const PORT = 3000 || process.env.PORT;
